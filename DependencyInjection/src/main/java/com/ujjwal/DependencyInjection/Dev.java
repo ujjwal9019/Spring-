@@ -1,13 +1,15 @@
 package com.ujjwal.DependencyInjection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 //So by this Anotaion we can inject its object to another class
 @Component
 public class Dev {
 //    Feild Injection
     @Autowired
-    Laptop laptop;
+    @Qualifier("destop")
+    Computer com;
 
 //    another way to inject is constructor inject
 //    public Dev(Laptop laptop){
@@ -21,7 +23,8 @@ public class Dev {
 //    }
 
     public void build(){
-        laptop.compile();
+
+        com.compile();
         System.out.println("This is an awsem project");
     }
 }
