@@ -1,13 +1,19 @@
 package com.ujjwal.WebApp.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 
 
+//The Entity is to map the variable with db
 @Component
+@Entity
 public class Product {
 
+//    This is for primary key in db
+    @Id
     private int prodId;
     private String prodName;
     private int price ;
